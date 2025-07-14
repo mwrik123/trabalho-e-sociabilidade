@@ -75,62 +75,9 @@
 - **Foco atual**: Transformações na era da uberização
 - **Reflexão final**: Flexibilidade vs. proteção social
 
-### 📚 **Glossário**
+### **Executando o Projeto (Frontend)**
 
-- **12 termos técnicos** com definições claras
-- **Interface expansível**: Toque para ver a definição
-- **Busca integrada**: Localização rápida de termos
-- **Dica de estudo**: Orientações pedagógicas
-
-### 🎓 **Créditos do Projeto**
-
-- Informações sobre a disciplina e universidade
-- Lista completa dos participantes
-- Objetivos pedagógicos do aplicativo
-- Nota sobre fins educativos e acadêmicos
-
-## 🛠️ Tecnologias Utilizadas
-
-### **Frontend**
-
-- **React Native** 0.74+ - Framework mobile multiplataforma
-- **Expo** 51.0+ - Plataforma de desenvolvimento
-- **TypeScript** 5.3+ - Tipagem estática
-- **Expo Router** - Sistema de navegação tipada
-
-### **Componentes e UI**
-
-- **React Native Components** - View, Text, ScrollView, SafeAreaView
-- **Custom Components** - MenuCard, WorkerCard, TimelineItem
-- **StyleSheet** - Estilização nativa otimizada
-
-### **Arquitetura**
-
-- **Expo New Architecture** - Performance aprimorada
-- **Typed Routes** - Navegação com TypeScript
-- **Component-based Architecture** - Reutilização de código
-- **Mock Data System** - Dados simulados para fins educativos
-
-## 📱 Compatibilidade
-
-- **📱 iOS**: iPhone e iPad (suporte nativo)
-- **🤖 Android**: Smartphones e tablets
-- **🌐 Web**: Versão browser (PWA)
-
-## 🚀 Como Executar
-
-### **Pré-requisitos**
-
-```bash
-# Node.js 18+ e npm/yarn
-node --version
-npm --version
-
-# Expo CLI
-npm install -g expo-cli
-```
-
-### **Instalação**
+### **Instalação e Execução (Frontend)**
 
 ```bash
 # Clone o repositório
@@ -143,11 +90,7 @@ cd trabalho-e-sociabilidade
 npm install
 # ou
 yarn install
-```
 
-### **Executando o Projeto**
-
-```bash
 # Inicie o servidor de desenvolvimento
 npm start
 # ou
@@ -158,6 +101,24 @@ npm run ios     # iOS Simulator
 npm run android # Android Emulator
 npm run web     # Navegador web
 ```
+
+### **Executando o Backend (API Node.js/Express)**
+
+```bash
+# Entre na pasta da API
+cd api
+# Instale as dependências
+npm install
+# Crie um arquivo .env com as variáveis necessárias (exemplo: DATABASE_URL)
+# Inicie o servidor da API
+npm start
+```
+
+> **Atenção:**
+>
+> - Nunca versionar o arquivo `.env` (ele já está no `.gitignore`).
+> - Coloque segredos e strings de conexão apenas no `.env`.
+> - O backend utiliza Node.js/Express e conecta a um banco PostgreSQL via variável de ambiente.
 
 ### **Testando no Dispositivo**
 
@@ -171,33 +132,38 @@ npm run web     # Navegador web
 trampo4.0/
 ├── src/
 │   ├── app/                    # Telas do aplicativo
-│   │   ├── index.tsx          # Tela principal (Home)
-│   │   ├── simulator.tsx      # Simulador de trabalho
-│   │   ├── profiles.tsx       # Lista de perfis
-│   │   ├── worker-detail.tsx  # Detalhes do trabalhador
-│   │   ├── quiz.tsx          # Sistema de quiz
-│   │   ├── timeline.tsx       # Linha do tempo
-│   │   ├── glossary.tsx      # Glossário de termos
-│   │   └── credits.tsx       # Créditos do projeto
-│   │
-│   ├── components/            # Componentes reutilizáveis
-│   │   ├── MenuCard.tsx      # Card do menu principal
-│   │   ├── WorkerCard.tsx    # Card do perfil de trabalhador
-│   │   └── TimelineItem.tsx  # Item da linha do tempo
-│   │
-│   ├── data/                 # Dados mockados
-│   │   └── mockData.ts       # Perfis, quizzes, glossário
-│   │
-│   └── types/                # Interfaces TypeScript
-│       └── index.ts          # Definições de tipos
+│   ├── components/             # Componentes reutilizáveis
+│   ├── data/                   # Dados mockados
+│   └── types/                  # Interfaces TypeScript
 │
-├── assets/                   # Recursos visuais
-│   └── images/              # Ícones e imagens
+├── api/                        # Backend Node.js/Express
+│   ├── api/                    # Sub-rotas da API
+│   ├── ranking/                # Endpoints de ranking
+│   ├── users/                  # Endpoints de usuários
+│   ├── health.js               # Healthcheck
+│   ├── index.js                # Entrypoint API
+│   ├── quiz-results.js         # Resultados do quiz
+│   ├── ranking-categories.js   # Categorias de ranking
+│   ├── ranking.js              # Ranking principal
+│   ├── server.js               # Inicialização do servidor
+│   ├── users.js                # Usuários
+│   └── vercel.json             # Configuração para deploy
 │
-├── app.json                 # Configuração do Expo
-├── package.json            # Dependências do projeto
-└── README.md              # Documentação
+├── assets/                     # Recursos visuais
+│   ├── fonts/
+│   └── images/
+│
+├── app.json                    # Configuração do Expo
+├── eas.json                    # Configuração EAS/Expo
+├── expo-env.d.ts               # Tipagem ambiente Expo
+├── package.json                # Dependências do projeto
+├── tsconfig.json               # Configuração TypeScript
+└── README.md                   # Documentação
 ```
+
+npm run ios # iOS Simulator
+npm run android # Android Emulator
+npm run web # Navegador web
 
 ## 🎯 Objetivos Pedagógicos
 
