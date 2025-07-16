@@ -31,9 +31,21 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
 
 # typescript
 *.tsbuildinfo
 
 .vercel
+
+android/
+
+.env
+
+.env.vercel
+
+# Keystore files (sensitive)
+*.keystore
+*.jks
+

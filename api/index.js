@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.json());
 
 // Configuração do PostgreSQL
-require("dotenv").config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {

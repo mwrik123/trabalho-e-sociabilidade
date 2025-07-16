@@ -36,12 +36,13 @@ app.use(
 app.use(express.json());
 
 // Configuração do banco PostgreSQL
-require("dotenv").config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl: process.env.DATABASE_URL
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
 });
 
 // Inicializar tabelas

@@ -328,12 +328,7 @@ export default function Quiz() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTop}>
-          <TouchableOpacity
-            style={styles.backButtonSmall}
-            onPress={backToCategories}
-          >
-            <Text style={styles.backButtonSmallText}>⬅️</Text>
-          </TouchableOpacity>
+          {/* Botão de voltar removido para não permitir voltar durante o quiz */}
           <View style={styles.headerCenter}>
             <Text style={styles.title}>
               {selectedCategory.icon} {selectedCategory.title}

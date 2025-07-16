@@ -17,8 +17,8 @@ export const serviceTypes: ServiceType[] = [
 export const workerProfiles: WorkerProfile[] = [
   {
     id: "1",
-    name: "Carlos Silva",
-    avatar: "👨‍💼",
+    name: "Carla Silva",
+    avatar: "👩‍✈️",
     serviceType: serviceTypes[1], // Motorista
     rating: 4.8,
     description:

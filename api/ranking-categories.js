@@ -1,13 +1,13 @@
 const { Pool } = require("pg");
 
 // Configuração do PostgreSQL
-require("dotenv").config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl:
-    process.env.NODE_ENV === "production"
-      ? { rejectUnauthorized: false }
-      : false,
+  ssl: process.env.DATABASE_URL
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
 });
 
 export default async function handler(req, res) {
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
       // Buscar categorias de ranking
       const result = await pool.query(`
-        SELECT category_id as "categoryId", category_name as "categoryName", COUNT(*) as "totalParticipants"
+        SELECT category_id as "categoryId", category_name as "categoryName", COUNT(DISTINCT user_id) as "totalParticipants"
         FROM quiz_results
         GROUP BY category_id, category_name
         ORDER BY category_name

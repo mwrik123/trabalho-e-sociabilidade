@@ -14,8 +14,8 @@ import { WorkerProfile } from "../types";
 
 const getReflectionText = (worker: WorkerProfile): string => {
   switch (worker.id) {
-    case "1": // Carlos Silva - Motorista
-      return "Carlos representa milhões de motoristas que trocaram empregos formais pela flexibilidade dos apps. Com custos de 37,5% da renda (combustível, manutenção, seguro), ele ganha R$ 17,78/h bruto, mas apenas R$ 11,11/h líquido. A ausência de direitos trabalhistas significa que férias, doença ou acidentes resultam em perda total de renda.";
+    case "1": // Carla Silva - Motorista
+      return "Carla representa milhões de motoristas que trocaram empregos formais pela flexibilidade dos apps. Com custos de 37,5% da renda (combustível, manutenção, seguro), ela ganha R$ 17,78/h bruto, mas apenas R$ 11,11/h líquido. A ausência de direitos trabalhistas significa que férias, doença ou acidentes resultam em perda total de renda.";
 
     case "2": // Ana Santos - Freelancer
       return "Ana exemplifica o trabalho criativo na era digital. Com custos baixos (13,3% da renda) e valor/hora alto (R$ 32,14/h), ela parece estar em melhor situação. Porém, a instabilidade da demanda e a necessidade constante de buscar novos clientes geram ansiedade e incerteza sobre o futuro profissional.";

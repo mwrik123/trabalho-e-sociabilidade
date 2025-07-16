@@ -1,13 +1,13 @@
 const { Pool } = require("pg");
 
 // Configuração do PostgreSQL
-require("dotenv").config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl:
-    process.env.NODE_ENV === "production"
-      ? { rejectUnauthorized: false }
-      : false,
+  ssl: process.env.DATABASE_URL
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
 });
 
 export default async function handler(req, res) {

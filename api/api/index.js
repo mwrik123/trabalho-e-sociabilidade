@@ -1,12 +1,13 @@
 const { Pool } = require("pg");
 
 // Configuração do PostgreSQL
-require("dotenv").config();
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl: process.env.DATABASE_URL
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
 });
 
 // Inicializar tabelas
